@@ -1,0 +1,7 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@ --builddirectory=_build --buildsystem=golang --with=golang
+
+execute_after_dh_auto_configure:
+	cp -av $(CURDIR)/debian/go/src _build/src/github.com/kr/pretty/vendor

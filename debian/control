@@ -1,0 +1,36 @@
+Source: golang-pretty
+Maintainer: Debian Go Packaging Team <team+pkg-go@tracker.debian.org>
+Uploaders: Anthony Fok <foka@debian.org>
+Section: golang
+Testsuite: autopkgtest-pkg-go
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               dh-golang,
+               golang-any,
+               golang-github-kr-text-dev (>= 0.2.0),
+               golang-github-rogpeppe-go-internal-dev (>= 1.6.1)
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/go-team/packages/golang-pretty
+Vcs-Git: https://salsa.debian.org/go-team/packages/golang-pretty.git
+Homepage: https://github.com/kr/pretty/
+Rules-Requires-Root: no
+XS-Go-Import-Path: github.com/kr/pretty
+
+Package: golang-github-kr-pretty-dev
+Architecture: all
+Multi-Arch: foreign
+Depends: golang-github-kr-text-dev (>= 0.2.0),
+         golang-github-rogpeppe-go-internal-dev (>= 1.6.1),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Breaks: golang-pretty-dev (<< 0.0~git20160325.0.add1dbc-1~)
+Provides: golang-pretty-dev
+Replaces: golang-pretty-dev (<< 0.0~git20160325.0.add1dbc-1~)
+Description: Pretty printing for Go values
+ Go library package github.com/kr/pretty provides pretty-printing
+ for Go values. This is useful during debugging, to avoid wrapping
+ long output lines in the terminal.
+ .
+ It provides a function, Formatter, that can be used with any function
+ that accepts a format string. It also provides convenience wrappers
+ for functions in packages fmt and log.
