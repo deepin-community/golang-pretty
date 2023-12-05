@@ -1,3 +1,14 @@
+golang-pretty (0.3.1-1) unstable; urgency=medium
+
+  * New upstream version 0.3.1
+  * Revert "Vendor in fmtsort from github.com/rogpeppe/go-internal v1.6.2"
+    as a prior circular dependency no longer exists
+  * Reorder fields in debian/control and debian/copyright
+  * Bump versioned dependencies as per go.mod
+  * Bump Standards-Version to 4.6.2 (no change)
+
+ -- Anthony Fok <foka@debian.org>  Thu, 21 Sep 2023 02:06:23 -0600
+
 golang-pretty (0.3.0-1) unstable; urgency=medium
 
   * New upstream version 0.3.0
